@@ -19,14 +19,18 @@ type TagName = string;
 type Attrs = { [key: string]: string | boolean };
 
 class Tag {
-  constructor(private tagName: TagName, private attrs: Attrs = {}, private children: Tag | string = '') {}
+  constructor(
+    private tagName: TagName,
+    private attrs: Attrs = {},
+    private children: Tag | string = '',
+  ) {}
 
   toString(): string {
     const isSelfClosingTag = selfClosingTags.includes(this.tagName);
     const closedTagPart = isSelfClosingTag ? '' : `</${this.tagName}>`;
-    const attrsResult = this.buildAttrs();
+    const attrs = this.buildAttrs() || '';
 
-    return `<${this.tagName}${attrsResult}>${this.children.toString()}${closedTagPart}`;
+    return `<${this.tagName}${attrs}>${this.children.toString()}${closedTagPart}`;
   }
 
   private buildAttrs(): string {
@@ -41,7 +45,7 @@ class Tag {
       })
       .join(' ');
 
-    return `${' '}${result}`;
+    return result;
   }
 }
 
