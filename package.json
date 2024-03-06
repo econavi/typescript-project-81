@@ -1,0 +1,25 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/econavi/typescript-project-81/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/econavi/typescript-project-81/actions)",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf ./dist && tsc",
+    "start": "npm run build && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/econavi/typescript-project-81.git"
+  },
+  "author": "Vladimir Kochenov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/econavi/typescript-project-81/issues"
+  },
+  "homepage": "https://github.com/econavi/typescript-project-81#readme",
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
