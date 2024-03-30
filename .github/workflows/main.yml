@@ -3,9 +3,23 @@ name: Main workflow
 on: push
 
 jobs:
-  eslint:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: npm install
-      - run: make lint
+      - name: git clone
+        uses: actions/checkout@v4
+
+      - name: npm install
+        run: npm install
+
+      - name: run lint
+        run: make lint
+
+      - name: test and publish code coverage
+        uses: paambaati/codeclimate-action@v5.0.0
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: make coverage
+          debug: true
+          coverageLocations: ${{github.workspace}}/coverage/cobertura-coverage.xml:cobertura

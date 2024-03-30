@@ -1,13 +1,9 @@
 module.exports = {
-  plugins: [
-    '@typescript-eslint',
-  ],
+  plugins: ['@typescript-eslint'],
   env: {
     node: true,
   },
-  extends: [
-    'airbnb-base',
-  ],
+  extends: ['airbnb-base'],
   parser: '@typescript-eslint/parser',
   rules: {},
   overrides: [
@@ -22,8 +18,14 @@ module.exports = {
         project: './tsconfig.json',
         tsconfigRootDir: __dirname,
       },
-      files: ['*.ts', '*tsx'],
+      files: ['*.ts'],
       rules: {},
+    },
+    {
+      files: ['*.test.ts'],
+      rules: {
+        '@typescript-eslint/require-await': 'off',
+      },
     },
   ],
 };

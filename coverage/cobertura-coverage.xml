@@ -1,0 +1,100 @@
+<?xml version="1.0" ?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage lines-valid="55" lines-covered="52" line-rate="0.9454" branches-valid="13" branches-covered="11" branch-rate="0.8461" timestamp="1711784219145" complexity="0" version="0.1">
+  <sources>
+    <source>/Users/acrob/dev/hexlet/typescript-project-81</source>
+  </sources>
+  <packages>
+    <package name="main" line-rate="0.9454" branch-rate="0.8461">
+      <classes>
+        <class name="Tag.ts" filename="src/Tag.ts" line-rate="1" branch-rate="0.9166">
+          <methods>
+            <method name="Tag" hits="7" signature="()V">
+              <lines>
+                <line number="22" hits="7"/>
+              </lines>
+            </method>
+            <method name="toString" hits="7" signature="()V">
+              <lines>
+                <line number="28" hits="7"/>
+              </lines>
+            </method>
+            <method name="buildAttrs" hits="7" signature="()V">
+              <lines>
+                <line number="36" hits="7"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="1" branch="false"/>
+            <line number="2" hits="1" branch="false"/>
+            <line number="3" hits="1" branch="false"/>
+            <line number="4" hits="1" branch="false"/>
+            <line number="5" hits="1" branch="false"/>
+            <line number="6" hits="1" branch="false"/>
+            <line number="7" hits="1" branch="false"/>
+            <line number="8" hits="1" branch="false"/>
+            <line number="9" hits="1" branch="false"/>
+            <line number="10" hits="1" branch="false"/>
+            <line number="11" hits="1" branch="false"/>
+            <line number="12" hits="1" branch="false"/>
+            <line number="13" hits="1" branch="false"/>
+            <line number="14" hits="1" branch="false"/>
+            <line number="15" hits="1" branch="false"/>
+            <line number="16" hits="1" branch="false"/>
+            <line number="17" hits="1" branch="false"/>
+            <line number="18" hits="1" branch="false"/>
+            <line number="19" hits="1" branch="false"/>
+            <line number="20" hits="1" branch="false"/>
+            <line number="21" hits="1" branch="false"/>
+            <line number="22" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="23" hits="7" branch="false"/>
+            <line number="24" hits="7" branch="false"/>
+            <line number="25" hits="7" branch="false"/>
+            <line number="26" hits="7" branch="false"/>
+            <line number="27" hits="1" branch="false"/>
+            <line number="28" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="29" hits="7" branch="false"/>
+            <line number="30" hits="7" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="31" hits="7" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="32" hits="7" branch="false"/>
+            <line number="33" hits="7" branch="false"/>
+            <line number="34" hits="7" branch="false"/>
+            <line number="35" hits="1" branch="false"/>
+            <line number="36" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="37" hits="7" branch="false"/>
+            <line number="38" hits="7" branch="false"/>
+            <line number="39" hits="7" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="40" hits="4" branch="false"/>
+            <line number="41" hits="4" branch="false"/>
+            <line number="42" hits="4" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="43" hits="6" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="44" hits="5" branch="false"/>
+            <line number="45" hits="4" branch="false"/>
+            <line number="46" hits="4" branch="false"/>
+            <line number="47" hits="4" branch="false"/>
+            <line number="48" hits="7" branch="true" condition-coverage="0% (0/1)"/>
+            <line number="49" hits="7" branch="false"/>
+            <line number="50" hits="1" branch="false"/>
+            <line number="51" hits="1" branch="false"/>
+            <line number="52" hits="1" branch="false"/>
+          </lines>
+        </class>
+        <class name="index.ts" filename="src/index.ts" line-rate="0" branch-rate="0">
+          <methods>
+            <method name="(empty-report)" hits="0" signature="()V">
+              <lines>
+                <line number="1" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="0" branch="true" condition-coverage="0% (0/1)"/>
+            <line number="2" hits="0" branch="false"/>
+            <line number="3" hits="0" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

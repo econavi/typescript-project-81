@@ -45,7 +45,7 @@ class Tag {
       })
       .join(' ');
 
-    return result;
+    return result ? ` ${result}` : '';
   }
 }
 
