@@ -18,3 +18,5 @@ test:
 
 coverage:
 	npm run coverage
+
+.PHONY: coverage
