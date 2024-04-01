@@ -18,7 +18,8 @@ describe('form_for method', () => {
 
 describe('input method', () => {
   test('input', () => {
-    const result = '<form action="#" method="post"><input name="name" type="text" value="rob"></form>';
+    const result =
+      '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"></form>';
 
     expect(
       FormBuilder.form_for(template, {}, (f) => {
@@ -29,7 +30,7 @@ describe('input method', () => {
 
   test('input with attrs', () => {
     const result =
-      '<form action="#" method="post"><input name="name" type="text" value="rob" class="user-input"></form>';
+      '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob" class="user-input"></form>';
 
     expect(
       FormBuilder.form_for(template, {}, (f) => {
@@ -40,7 +41,7 @@ describe('input method', () => {
 
   test('two inputs', () => {
     const result =
-      '<form action="#" method="post"><input name="name" type="text" value="rob"><input name="job" type="text" value="hexlet"></form>';
+      '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"><label for="job">job</label><input name="job" type="text" value="hexlet"></form>';
 
     expect(
       FormBuilder.form_for(template, {}, (f) => {
@@ -52,7 +53,7 @@ describe('input method', () => {
 
   test('textarea', () => {
     const result =
-      '<form action="#" method="post"><textarea name="job" cols="20" rows="40" as="textarea">hexlet</textarea></form>';
+      '<form action="#" method="post"><label for="job">job</label><textarea name="job" cols="20" rows="40" as="textarea">hexlet</textarea></form>';
 
     expect(
       FormBuilder.form_for(template, {}, (f) => {
@@ -63,7 +64,7 @@ describe('input method', () => {
 
   test('textarea with attrs', () => {
     const result =
-      '<form action="#" method="post"><textarea name="job" cols="50" rows="50" as="textarea">hexlet</textarea></form>';
+      '<form action="#" method="post"><label for="job">job</label><textarea name="job" cols="50" rows="50" as="textarea">hexlet</textarea></form>';
 
     expect(
       FormBuilder.form_for(template, {}, (f) => {
@@ -74,7 +75,7 @@ describe('input method', () => {
 
   test('input and textarea', () => {
     const result =
-      '<form action="#" method="post"><input name="name" type="text" value="rob" class="user-input"><textarea name="job" cols="50" rows="50" as="textarea">hexlet</textarea></form>';
+      '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob" class="user-input"><label for="job">job</label><textarea name="job" cols="50" rows="50" as="textarea">hexlet</textarea></form>';
 
     expect(
       FormBuilder.form_for(template, {}, (f) => {

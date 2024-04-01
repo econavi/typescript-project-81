@@ -36,6 +36,10 @@ export default class FormBuilder {
       throw new Error("Field 'age' does not exist in the template.");
     }
 
+    const label = new Tag('label', { for: name }, name);
+
+    this.fields.push(label);
+
     if (attrs?.as === 'textarea') {
       const textarea = new Tag(
         'textarea',
