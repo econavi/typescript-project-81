@@ -1,3 +1,3 @@
-/* eslint-disable no-console */
+import FormBuilder from './components/FormBuilder';
 
-console.log('It is work!');
+export default FormBuilder;

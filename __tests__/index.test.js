@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import FormBuilder from './FormBuilder';
+import FormBuilder from '../src/index.ts';
 
 const template = { name: 'rob', job: 'hexlet', gender: 'm' };
 
@@ -18,8 +18,7 @@ describe('form_for method', () => {
 
 describe('input method', () => {
   test('input', () => {
-    const result =
-      '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"></form>';
+    const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"></form>';
 
     expect(
       FormBuilder.form_for(template, {}, (f) => {
@@ -29,8 +28,7 @@ describe('input method', () => {
   });
 
   test('input with attrs', () => {
-    const result =
-      '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob" class="user-input"></form>';
+    const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob" class="user-input"></form>';
 
     expect(
       FormBuilder.form_for(template, {}, (f) => {
@@ -40,8 +38,7 @@ describe('input method', () => {
   });
 
   test('two inputs', () => {
-    const result =
-      '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"><label for="job">job</label><input name="job" type="text" value="hexlet"></form>';
+    const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"><label for="job">job</label><input name="job" type="text" value="hexlet"></form>';
 
     expect(
       FormBuilder.form_for(template, {}, (f) => {
@@ -52,8 +49,7 @@ describe('input method', () => {
   });
 
   test('textarea', () => {
-    const result =
-      '<form action="#" method="post"><label for="job">job</label><textarea name="job" cols="20" rows="40" as="textarea">hexlet</textarea></form>';
+    const result = '<form action="#" method="post"><label for="job">job</label><textarea name="job" cols="20" rows="40" as="textarea">hexlet</textarea></form>';
 
     expect(
       FormBuilder.form_for(template, {}, (f) => {
@@ -63,8 +59,7 @@ describe('input method', () => {
   });
 
   test('textarea with attrs', () => {
-    const result =
-      '<form action="#" method="post"><label for="job">job</label><textarea name="job" cols="50" rows="50" as="textarea">hexlet</textarea></form>';
+    const result = '<form action="#" method="post"><label for="job">job</label><textarea name="job" cols="50" rows="50" as="textarea">hexlet</textarea></form>';
 
     expect(
       FormBuilder.form_for(template, {}, (f) => {
@@ -74,8 +69,7 @@ describe('input method', () => {
   });
 
   test('input and textarea', () => {
-    const result =
-      '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob" class="user-input"><label for="job">job</label><textarea name="job" cols="50" rows="50" as="textarea">hexlet</textarea></form>';
+    const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob" class="user-input"><label for="job">job</label><textarea name="job" cols="50" rows="50" as="textarea">hexlet</textarea></form>';
 
     expect(
       FormBuilder.form_for(template, {}, (f) => {
@@ -86,8 +80,7 @@ describe('input method', () => {
   });
 
   test('input with submit', () => {
-    const result =
-      '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"><input type="submit" value="Save"></form>';
+    const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"><input type="submit" value="Save"></form>';
 
     expect(
       FormBuilder.form_for(template, {}, (f) => {
@@ -98,8 +91,7 @@ describe('input method', () => {
   });
 
   test('submit with custom text', () => {
-    const result =
-      '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"><input type="submit" value="Wow"></form>';
+    const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"><input type="submit" value="Wow"></form>';
 
     expect(
       FormBuilder.form_for(template, {}, (f) => {
@@ -110,10 +102,8 @@ describe('input method', () => {
   });
 
   test('throw error', () => {
-    expect(() =>
-      FormBuilder.form_for(template, {}, (f) => {
-        f.input('age');
-      }),
-    ).toThrowError("Field 'age' does not exist in the template.");
+    expect(() => FormBuilder.form_for(template, {}, (f) => {
+      f.input('age');
+    })).toThrowError("Field 'age' does not exist in the template.");
   });
 });

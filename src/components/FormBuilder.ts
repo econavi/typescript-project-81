@@ -1,4 +1,4 @@
-import Tag from 'src/Tag';
+import Tag from './Tag';
 
 type InputMethod = (name: string, attrs?: Record<string, string | number>) => void;
 
