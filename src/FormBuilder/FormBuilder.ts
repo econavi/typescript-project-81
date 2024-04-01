@@ -2,11 +2,13 @@ import Tag from 'src/Tag';
 
 type InputMethod = (name: string, attrs?: Record<string, string | number>) => void;
 
+type SubmitMethod = (text?: string) => void;
+
 type Template = Record<string, string>;
 
 type Options = Record<string, string>;
 
-type Callback = (f: { input: InputMethod }) => void;
+type Callback = (f: { input: InputMethod; submit: SubmitMethod }) => void;
 
 export default class FormBuilder {
   static fields: Tag[] = [];
@@ -17,7 +19,7 @@ export default class FormBuilder {
     this.template = template;
     this.fields = [];
 
-    callback({ input: this.input });
+    callback({ input: this.input, submit: this.submit });
 
     const form = new Tag(
       'form',
@@ -30,6 +32,15 @@ export default class FormBuilder {
 
     return form.toString();
   }
+
+  static submit: SubmitMethod = (text) => {
+    const button = new Tag('input', {
+      type: 'submit',
+      value: text ?? 'Save',
+    });
+
+    this.fields.push(button);
+  };
 
   static input: InputMethod = (name, attrs) => {
     if (!this.template[name]) {

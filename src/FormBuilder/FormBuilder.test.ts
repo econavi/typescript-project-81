@@ -85,6 +85,30 @@ describe('input method', () => {
     ).toBe(result);
   });
 
+  test('input with submit', () => {
+    const result =
+      '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"><input type="submit" value="Save"></form>';
+
+    expect(
+      FormBuilder.form_for(template, {}, (f) => {
+        f.input('name');
+        f.submit();
+      }),
+    ).toBe(result);
+  });
+
+  test('submit with custom text', () => {
+    const result =
+      '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"><input type="submit" value="Wow"></form>';
+
+    expect(
+      FormBuilder.form_for(template, {}, (f) => {
+        f.input('name');
+        f.submit('Wow');
+      }),
+    ).toBe(result);
+  });
+
   test('throw error', () => {
     expect(() =>
       FormBuilder.form_for(template, {}, (f) => {
