@@ -25,6 +25,9 @@ module.exports = {
       files: ['*.test.ts'],
       rules: {
         '@typescript-eslint/require-await': 'off',
+        'function-paren-newline': 'off',
+        'implicit-arrow-linebreak': 'off',
+        'operator-linebreak': 'off',
       },
     },
   ],
