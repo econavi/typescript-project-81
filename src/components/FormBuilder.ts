@@ -10,6 +10,11 @@ type Options = Record<string, string>;
 
 type Callback = (f: { input: InputMethod; submit: SubmitMethod }) => void;
 
+const toUpperCaseFirstLetter = (text: string): string => {
+  const [first, ...tail] = text.split('');
+  return [first.toUpperCase(), ...tail].join('');
+};
+
 export default class FormBuilder {
   static fields: Tag[] = [];
 
@@ -47,7 +52,7 @@ export default class FormBuilder {
       throw new Error("Field 'age' does not exist in the template.");
     }
 
-    const label = new Tag('label', { for: name }, name);
+    const label = new Tag('label', { for: name }, toUpperCaseFirstLetter(name));
 
     this.fields.push(label);
 
