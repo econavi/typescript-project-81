@@ -15,7 +15,7 @@ export default class FormBuilder {
 
   static template: Template = {};
 
-  static form_for(template: Template, options: Options, callback: Callback) {
+  static formFor(template: Template, options: Options, callback: Callback) {
     this.template = template;
     this.fields = [];
 

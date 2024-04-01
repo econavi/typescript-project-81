@@ -4,15 +4,15 @@ import FormBuilder from '../src/index.ts';
 
 const template = { name: 'rob', job: 'hexlet', gender: 'm' };
 
-describe('form_for method', () => {
+describe('formFor method', () => {
   test('should work', () => {
     const result = '<form action="#" method="post"></form>';
-    expect(FormBuilder.form_for(template, {}, () => {})).toBe(result);
+    expect(FormBuilder.formFor(template, {}, () => {})).toBe(result);
   });
 
   test('with url', () => {
     const result = '<form action="/users" method="post"></form>';
-    expect(FormBuilder.form_for(template, { url: '/users' }, () => {})).toBe(result);
+    expect(FormBuilder.formFor(template, { url: '/users' }, () => {})).toBe(result);
   });
 });
 
@@ -21,7 +21,7 @@ describe('input method', () => {
     const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"></form>';
 
     expect(
-      FormBuilder.form_for(template, {}, (f) => {
+      FormBuilder.formFor(template, {}, (f) => {
         f.input('name');
       }),
     ).toBe(result);
@@ -31,7 +31,7 @@ describe('input method', () => {
     const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob" class="user-input"></form>';
 
     expect(
-      FormBuilder.form_for(template, {}, (f) => {
+      FormBuilder.formFor(template, {}, (f) => {
         f.input('name', { class: 'user-input' });
       }),
     ).toBe(result);
@@ -41,7 +41,7 @@ describe('input method', () => {
     const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"><label for="job">job</label><input name="job" type="text" value="hexlet"></form>';
 
     expect(
-      FormBuilder.form_for(template, {}, (f) => {
+      FormBuilder.formFor(template, {}, (f) => {
         f.input('name');
         f.input('job');
       }),
@@ -52,7 +52,7 @@ describe('input method', () => {
     const result = '<form action="#" method="post"><label for="job">job</label><textarea name="job" cols="20" rows="40" as="textarea">hexlet</textarea></form>';
 
     expect(
-      FormBuilder.form_for(template, {}, (f) => {
+      FormBuilder.formFor(template, {}, (f) => {
         f.input('job', { as: 'textarea' });
       }),
     ).toBe(result);
@@ -62,7 +62,7 @@ describe('input method', () => {
     const result = '<form action="#" method="post"><label for="job">job</label><textarea name="job" cols="50" rows="50" as="textarea">hexlet</textarea></form>';
 
     expect(
-      FormBuilder.form_for(template, {}, (f) => {
+      FormBuilder.formFor(template, {}, (f) => {
         f.input('job', { as: 'textarea', cols: 50, rows: 50 });
       }),
     ).toBe(result);
@@ -72,7 +72,7 @@ describe('input method', () => {
     const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob" class="user-input"><label for="job">job</label><textarea name="job" cols="50" rows="50" as="textarea">hexlet</textarea></form>';
 
     expect(
-      FormBuilder.form_for(template, {}, (f) => {
+      FormBuilder.formFor(template, {}, (f) => {
         f.input('name', { class: 'user-input' });
         f.input('job', { as: 'textarea', cols: 50, rows: 50 });
       }),
@@ -83,7 +83,7 @@ describe('input method', () => {
     const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"><input type="submit" value="Save"></form>';
 
     expect(
-      FormBuilder.form_for(template, {}, (f) => {
+      FormBuilder.formFor(template, {}, (f) => {
         f.input('name');
         f.submit();
       }),
@@ -94,7 +94,7 @@ describe('input method', () => {
     const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"><input type="submit" value="Wow"></form>';
 
     expect(
-      FormBuilder.form_for(template, {}, (f) => {
+      FormBuilder.formFor(template, {}, (f) => {
         f.input('name');
         f.submit('Wow');
       }),
@@ -102,7 +102,7 @@ describe('input method', () => {
   });
 
   test('throw error', () => {
-    expect(() => FormBuilder.form_for(template, {}, (f) => {
+    expect(() => FormBuilder.formFor(template, {}, (f) => {
       f.input('age');
     })).toThrowError("Field 'age' does not exist in the template.");
   });
