@@ -24,8 +24,8 @@ export default class FormBuilder {
     const form = new Tag(
       'form',
       {
-        action: options.url ?? '#',
         method: options.method ?? 'post',
+        action: options.url ?? '#',
       },
       this.fields.join(''),
     );
@@ -52,12 +52,14 @@ export default class FormBuilder {
     this.fields.push(label);
 
     if (attrs?.as === 'textarea') {
+      delete attrs['as']
+
       const textarea = new Tag(
         'textarea',
         {
-          name,
           cols: '20',
           rows: '40',
+          name,
           ...attrs,
         },
         this.template[name],

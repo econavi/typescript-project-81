@@ -6,19 +6,19 @@ const template = { name: 'rob', job: 'hexlet', gender: 'm' };
 
 describe('formFor method', () => {
   test('should work', () => {
-    const result = '<form action="#" method="post"></form>';
+    const result = '<form method="post" action="#"></form>';
     expect(FormBuilder.formFor(template, {}, () => {})).toBe(result);
   });
 
   test('with url', () => {
-    const result = '<form action="/users" method="post"></form>';
+    const result = '<form method="post" action="/users"></form>';
     expect(FormBuilder.formFor(template, { url: '/users' }, () => {})).toBe(result);
   });
 });
 
 describe('input method', () => {
   test('input', () => {
-    const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"></form>';
+    const result = '<form method="post" action="#"><label for="name">name</label><input name="name" type="text" value="rob"></form>';
 
     expect(
       FormBuilder.formFor(template, {}, (f) => {
@@ -28,7 +28,7 @@ describe('input method', () => {
   });
 
   test('input with attrs', () => {
-    const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob" class="user-input"></form>';
+    const result = '<form method="post" action="#"><label for="name">name</label><input name="name" type="text" value="rob" class="user-input"></form>';
 
     expect(
       FormBuilder.formFor(template, {}, (f) => {
@@ -38,7 +38,7 @@ describe('input method', () => {
   });
 
   test('two inputs', () => {
-    const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"><label for="job">job</label><input name="job" type="text" value="hexlet"></form>';
+    const result = '<form method="post" action="#"><label for="name">name</label><input name="name" type="text" value="rob"><label for="job">job</label><input name="job" type="text" value="hexlet"></form>';
 
     expect(
       FormBuilder.formFor(template, {}, (f) => {
@@ -49,7 +49,7 @@ describe('input method', () => {
   });
 
   test('textarea', () => {
-    const result = '<form action="#" method="post"><label for="job">job</label><textarea name="job" cols="20" rows="40" as="textarea">hexlet</textarea></form>';
+    const result = '<form method="post" action="#"><label for="job">job</label><textarea cols="20" rows="40" name="job">hexlet</textarea></form>';
 
     expect(
       FormBuilder.formFor(template, {}, (f) => {
@@ -59,7 +59,7 @@ describe('input method', () => {
   });
 
   test('textarea with attrs', () => {
-    const result = '<form action="#" method="post"><label for="job">job</label><textarea name="job" cols="50" rows="50" as="textarea">hexlet</textarea></form>';
+    const result = '<form method="post" action="#"><label for="job">job</label><textarea cols="50" rows="50" name="job">hexlet</textarea></form>';
 
     expect(
       FormBuilder.formFor(template, {}, (f) => {
@@ -69,7 +69,7 @@ describe('input method', () => {
   });
 
   test('input and textarea', () => {
-    const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob" class="user-input"><label for="job">job</label><textarea name="job" cols="50" rows="50" as="textarea">hexlet</textarea></form>';
+    const result = '<form method="post" action="#"><label for="name">name</label><input name="name" type="text" value="rob" class="user-input"><label for="job">job</label><textarea cols="50" rows="50" name="job">hexlet</textarea></form>';
 
     expect(
       FormBuilder.formFor(template, {}, (f) => {
@@ -80,7 +80,7 @@ describe('input method', () => {
   });
 
   test('input with submit', () => {
-    const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"><input type="submit" value="Save"></form>';
+    const result = '<form method="post" action="#"><label for="name">name</label><input name="name" type="text" value="rob"><input type="submit" value="Save"></form>';
 
     expect(
       FormBuilder.formFor(template, {}, (f) => {
@@ -91,7 +91,7 @@ describe('input method', () => {
   });
 
   test('submit with custom text', () => {
-    const result = '<form action="#" method="post"><label for="name">name</label><input name="name" type="text" value="rob"><input type="submit" value="Wow"></form>';
+    const result = '<form method="post" action="#"><label for="name">name</label><input name="name" type="text" value="rob"><input type="submit" value="Wow"></form>';
 
     expect(
       FormBuilder.formFor(template, {}, (f) => {
